@@ -25,7 +25,9 @@ RSS: false
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
-
+# Analytics settings
+# Baidu Analytics
+ba_track_id: fe2a97f70f74244e8fbdf0c54010d736
 
 
 # Build settings
