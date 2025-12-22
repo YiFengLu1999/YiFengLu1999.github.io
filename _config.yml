@@ -11,7 +11,7 @@ github_repo: "https://github.com/YiFengLu1999/YiFengLu1999.github.io.git" # you 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "史界革命不起，則吾國遂不可救。悠悠萬事，惟此為大。"
+sidebar-about-description: "史界革命不起，則吾國遂不可救。悠悠萬事，惟此為大。——《新史學》"
 sidebar-avatar: /img/yifeng.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
