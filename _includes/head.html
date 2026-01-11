@@ -1,42 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Description" content="{{ site.description }}">
-  <meta name="Keywords" content="{{, site.keyword, }}">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1">&lt;meta charset="UTF-8" /&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span></p>
-<p class="p1"><span class="s1">&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | relative_url }}"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;link rel="stylesheet" href="{{ '/css/hux-blog.min.css' | relative_url }}"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;link rel="stylesheet" href="{{ '/css/syntax.css' | relative_url }}"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>window.MathJax = {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>tex: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>inlineMath: [['$', '$'], ['\\(', '\\)']],</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>displayMath: [['$$', '$$'], ['\\[', '\\]']]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>options: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>};</span></p>
-<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;</span></p>
-</body>
-</html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="{{ site.description }}" />
+<meta name="keywords" content="{{ site.keyword }}" />
+<title>
+  {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+</title>
+
+<link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/css/hux-blog.min.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/css/syntax.css' | relative_url }}" />
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
