@@ -17,40 +17,32 @@
 <p class="p1"><span class="s1">layout: default</span></p>
 <p class="p1"><span class="s1">---</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{% for tag in page.tags %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{{ tag }}</span></p>
-<p class="p1"><span class="s1">{% endfor %}</span></p>
+<p class="p1"><span class="s1">&lt;h1&gt;{{ page.title }}&lt;/h1&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{{ page.title }}</span></p>
+<p class="p1"><span class="s1">{% if page.subtitle %}</span></p>
+<p class="p1"><span class="s1">&lt;h2&gt;{{ page.subtitle }}&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">{% endif %}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{% comment %} always create a h2 for keeping the margin , Hux {% endcomment %}</span></p>
-<p class="p1"><span class="s1">{% comment %} if page.subtitle {% endcomment %}</span></p>
-<p class="p1"><span class="s1">{{ page.subtitle }}</span></p>
-<p class="p1"><span class="s1">{% comment %} endif {% endcomment %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span></p>
+<p class="p1"><span class="s1">&lt;p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>Posted by {{ page.author | default: site.title }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>on {{ page.date | date: "%B %-d, %Y" }}</span></p>
+<p class="p1"><span class="s1">&lt;/p&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">{{ content }}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{% if page.previous.url %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>Previous {{ page.previous.title }}</span></p>
-<p class="p1"><span class="s1">{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{% if page.next.url %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>Next {{ page.next.title }}</span></p>
-<p class="p1"><span class="s1">{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">{% if page.catalog %}</span></p>
+<p class="p1"><span class="s1">&lt;hr&gt;</span></p>
 <p class="p1"><span class="s1">CATALOG</span></p>
 <p class="p1"><span class="s1">{% endif %}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">{% if site.featured-tags %}</span></p>
+<p class="p1"><span class="s1">&lt;hr&gt;</span></p>
 <p class="p1"><span class="s1">FEATURED TAGS</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% for tag in site.tags %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if tag[1].size &gt; site.featured-condition-size %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{{ tag[0] }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endfor %}</span></p>
+<p class="p1"><span class="s1">{% for tag in site.tags %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% if tag[1].size &gt; site.featured-condition-size %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{{ tag[0] }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endif %}</span></p>
+<p class="p1"><span class="s1">{% endfor %}</span></p>
 <p class="p1"><span class="s1">{% endif %}</span></p>
 </body>
 </html>
