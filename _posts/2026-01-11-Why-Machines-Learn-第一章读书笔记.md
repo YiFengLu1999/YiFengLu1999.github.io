@@ -3,7 +3,7 @@ layout:     post
 title:      Why Machines Learn 第一章读书笔记：从MCP到感知机，学习为何会“卡死”
 subtitle:   线性可分的承诺、线性不可分的死循环，以及把逻辑变成几何直觉
 date:       2026-01-11
-author:     BY
+author:     YF
 header-img: img_Blog/neuro.jpg
 catalog:    true
 tags:
