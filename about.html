@@ -12,7 +12,19 @@ header-img: "img/WechatIMG89082.jpg"
 </select> -->
 
 <!-- Chinese Version -->
-<div class="zh post-container">
+<section class="about-deck">
+    <aside class="about-signal-panel">
+        <span class="signal-label">Research Profile</span>
+        <h2>Yifeng Lu</h2>
+        <p>数学训练、神经生物学经验与人工智能研究，在这里被放进同一个长期问题意识里。</p>
+        <ul class="about-signal-list">
+            <li>Westlake University</li>
+            <li>AI + Digital Humanities</li>
+            <li>Mathematics / Neuroscience / ML</li>
+        </ul>
+    </aside>
+
+    <div class="zh post-container about-main-panel">
 
     <!--copied from markdown -->
     <blockquote><p>天行健 君子以自强不息<br>
@@ -22,7 +34,7 @@ header-img: "img/WechatIMG89082.jpg"
 
     <p>在此之前，因为我对人类意识的兴趣，我在清华大学麦戈文脑科学中心，做了一段时间的系统神经生物学（丘脑的环路机制）。</p>
     
-    <p>更早的时候，我取得了数学与应用数学的学士学位，数学是我永远的爱好。<p>
+    <p>更早的时候，我取得了数学与应用数学的学士学位，数学是我永远的爱好。</p>
         
     <h5>一些我参与的论文</h5>
 
@@ -33,7 +45,8 @@ header-img: "img/WechatIMG89082.jpg"
         </a>
     </li>
     </ul>
-</div>
+    </div>
+</section>
 
 <!-- English Version -->
 <!-- <div class="en post-container">
@@ -71,13 +84,13 @@ header-img: "img/WechatIMG89082.jpg"
         var _hash = window.location.hash;
         // en
         if(_hash == "#en"){
-            $select.selectedIndex = 1;
+            if ($select) $select.selectedIndex = 1;
             $en.style.display = "block";
             $zh.style.display = "none";
         // zh by default
         }else{
             // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
+            if ($select) $select.selectedIndex = 0;
             $zh.style.display = "block";
             $en.style.display = "none";
         }
@@ -93,7 +106,9 @@ header-img: "img/WechatIMG89082.jpg"
     }
 
     // init
-    _render();
+    if ($zh || $en) {
+        _render();
+    }
 </script>
 
 
@@ -143,4 +158,3 @@ header-img: "img/WechatIMG89082.jpg"
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
-

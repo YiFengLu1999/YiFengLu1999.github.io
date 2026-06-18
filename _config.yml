@@ -1,9 +1,9 @@
 # Site settings
-title: YF Blog
-SEOTitle: 易锋的博客 | YF Blog
+title: YF Lab
+SEOTitle: 易锋的研究博客 | YF Lab
 header-img: tiananmen.jpg
 email: huoyingyifeng@163.com
-description: "The art of doing mathematics is finding that special case that contains all the germs of generality."
+description: "Mathematics, AI, neuroscience, and digital humanities in one evolving research notebook."
 keyword: "数学, AI , 神经生物学, 数字人文"
 url: "http://YiFengLu1999.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'

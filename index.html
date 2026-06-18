@@ -3,19 +3,63 @@ layout: page
 description: "Thinking will not overcome fear but action will."
 ---
 
+<section class="hero-lab">
+    <div class="hero-lab-copy">
+        <p class="hero-kicker">Mathematics · AI · Neurobiology · Digital Humanities</p>
+        <h2>把数学直觉、人工智能与人文学术，做成一个可阅读的研究现场。</h2>
+        <p class="hero-summary">这里不是按时间堆文章的地方，而更像一间正在持续展开的研究工作室：读书、讲座、模型、问题意识，以及一些仍在发光的长期兴趣。</p>
+        <div class="hero-pulse-bar" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="hero-actions">
+            <a class="hero-action-primary" href="{{ '/about/' | prepend: site.baseurl }}">认识我</a>
+            <a class="hero-action-secondary" href="{{ '/tags/' | prepend: site.baseurl }}">浏览主题</a>
+        </div>
+    </div>
+    <div class="hero-lab-panels">
+        <div class="hero-signal-card">
+            <span class="signal-label">Focus</span>
+            <strong>AI for Humanities</strong>
+            <p>用机器学习和形式化方法，帮助人文学科提出更锋利的问题。</p>
+        </div>
+        <div class="hero-signal-card">
+            <span class="signal-label">Method</span>
+            <strong>Math as Interface</strong>
+            <p>把抽象结构变成可操作的直觉，让推理比术语更先到达读者。</p>
+        </div>
+        <div class="hero-signal-card">
+            <span class="signal-label">Current</span>
+            <strong>Lecture Notes & Reading</strong>
+            <p>最近内容聚焦于 Why Machines Learn 与 AI 数学讲座的重写和整理。</p>
+        </div>
+    </div>
+</section>
+
+<section class="home-section-note">
+    <span class="signal-label">Latest Trajectory</span>
+    <p>最近的更新节奏很明确：一边把《Why Machines Learn》写成更可读的中文长文，一边把 AI 与数学讲座整理成带视觉叙事的研究笔记。</p>
+</section>
+
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
+        {% if post.header-img %}
+        <span class="post-cover">
+            <img src="{{ post.header-img | relative_url }}" alt="{{ post.title }}" loading="lazy" decoding="async">
+        </span>
         {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
+        <div class="post-card-body">
+            <h2 class="post-title">
+                {{ post.title }}
+            </h2>
+            {% if post.subtitle %}
+            <h3 class="post-subtitle">
+                {{ post.subtitle }}
+            </h3>
+            {% endif %}
+            <div class="post-content-preview">
+                {{ post.content | strip_html | truncate:200 }}
+            </div>
         </div>
     </a>
     <p class="post-meta">
