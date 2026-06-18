@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Why Machines Learn 博文 Markdown 撰写规范
 
 这份规范适用于 `Why Machines Learn` 系列读书笔记，目标是让每篇文章在 Jekyll 博客中保持统一的结构、排版风格和数学公式显示效果。
