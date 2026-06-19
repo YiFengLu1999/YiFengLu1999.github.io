@@ -113,12 +113,12 @@ a:focus {
 
 .intro-header .site-heading,
 .intro-header .page-heading {
-  padding: 74px 56px 70px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  padding: 74px 0 70px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .intro-header .site-heading h1,
@@ -653,7 +653,7 @@ footer .copyright {
   .intro-header .site-heading,
   .intro-header .page-heading {
     max-width: calc(100vw - 48px);
-    padding: 54px 24px 50px;
+    padding: 54px 0 50px;
   }
 }
 
