@@ -100,7 +100,9 @@ a:focus {
   position: relative;
   z-index: 1;
   text-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
-  max-width: 920px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .intro-header .site-heading h1,
@@ -111,13 +113,17 @@ a:focus {
 
 .intro-header .site-heading,
 .intro-header .page-heading {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 74px 56px 70px;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 28px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+.intro-header .site-heading h1,
+.intro-header .page-heading h1 {
+  font-size: 68px;
 }
 
 .postlist-container,
@@ -641,7 +647,13 @@ footer .copyright {
 
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 36px;
+    font-size: 42px;
+  }
+
+  .intro-header .site-heading,
+  .intro-header .page-heading {
+    max-width: calc(100vw - 48px);
+    padding: 54px 24px 50px;
   }
 }
 
