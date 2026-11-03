@@ -1,0 +1,46 @@
+---
+layout: default
+title: Learning Ilya
+title_en: Learning from Ilya — A Living Reading Archive
+permalink: /ilya/
+bilingual: true
+body_class: ilya-page
+---
+<link rel="stylesheet" href="{{ '/css/ilya.css' | relative_url }}">
+{% assign lectures_done = 0 %}{% assign papers_done = 0 %}
+{% for item in site.data.ilya.lectures %}{% assign note = site.posts | where: 'ilya_id', item.id | first %}{% if note %}{% assign lectures_done = lectures_done | plus: 1 %}{% endif %}{% endfor %}
+{% for item in site.data.ilya.papers %}{% assign note = site.posts | where: 'ilya_id', item.id | first %}{% if note %}{% assign papers_done = papers_done | plus: 1 %}{% endif %}{% endfor %}
+<main class="ilya-archive">
+  <header class="ilya-cover">
+    <div class="ilya-cover-copy">
+      <p class="ilya-eyebrow">YF LAB / A LIVING READING ARCHIVE</p>
+      {% include language-switch.html %}
+      <h1><span data-lang="en">Learning<br>from <em>Ilya.</em></span><span data-lang="zh">学习伊利亚，<br><em>从问题出发。</em></span></h1>
+      <p class="ilya-lede"><span data-lang="en">Follow the questions behind the ideas.<br>Talks, papers, and notes on how intelligence learns.</span><span data-lang="zh">沿着问题，理解思想。<br>系统整理伊利亚的讲座与推荐阅读，留下可以反复读的笔记。</span></p>
+      <nav class="ilya-jump" aria-label="Archive sections"><a href="#lectures"><span data-lang="en">01 / Lectures</span><span data-lang="zh">01 / 讲座笔记</span> ↓</a><a href="#papers"><span data-lang="en">02 / Reading list</span><span data-lang="zh">02 / 论文与阅读</span> ↓</a></nav>
+    </div>
+    <div class="ilya-cover-art" role="img" aria-label="Patterns become shared structure"><span>STRUCTURE → PREDICTION → UNDERSTANDING</span></div>
+  </header>
+  <div class="ilya-stats">
+    <div><strong>{{ lectures_done }}<small> / {{ site.data.ilya.lectures.size }}</small></strong><span data-lang="en">Lecture notes published</span><span data-lang="zh">已完成 / 已收录讲座</span><progress value="{{ lectures_done }}" max="{{ site.data.ilya.lectures.size }}" aria-label="Lecture note progress"></progress></div>
+    <div><strong>{{ papers_done }}<small> / {{ site.data.ilya.papers.size }}</small></strong><span data-lang="en">Reading notes published</span><span data-lang="zh">已完成 / 阅读清单条目</span><progress value="{{ papers_done }}" max="{{ site.data.ilya.papers.size }}" aria-label="Reading note progress"></progress></div>
+    <div class="ilya-edition"><span data-lang="en">An ongoing study, not a finished collection.</span><span data-lang="zh">持续学习，持续更新。</span><small><span data-lang="en">Sources checked</span><span data-lang="zh">资料核对</span> · {{ site.data.ilya.checked }}</small></div>
+  </div>
+  <section class="ilya-section" id="lectures">
+    <div class="ilya-section-head"><span class="ilya-number">01</span><div><h2><span data-lang="en">The lectures</span><span data-lang="zh">伊利亚的讲座</span></h2><p data-lang="en">Five documented events to begin with. This is our growing selection, not a count of every talk Ilya has given.</p><p data-lang="zh">先从 5 场有主办方记录的活动开始。这是本站持续扩展的目录，不是伊利亚全部讲座的总数。</p></div></div>
+    {% for item in site.data.ilya.lectures %}
+    {% assign note = site.posts | where: 'ilya_id', item.id | first %}
+    <article class="ilya-talk {% if note %}ilya-talk-ready{% endif %}">
+      <div class="ilya-talk-date">{{ item.date }}<small>{{ item.venue }}</small></div>
+      <div><span class="ilya-status">{% if note %}<span data-lang="en">NOTE PUBLISHED · EN / 中文</span><span data-lang="zh">笔记已发布 · 中英双语</span>{% else %}<span data-lang="en">ON THE READING DESK</span><span data-lang="zh">待整理笔记</span>{% endif %}</span><h3>{{ item.title }}</h3>
+      {% if note %}<p data-lang="en">Why can next-token prediction teach us more? An illustrated guide to compression, generalization and linear probes.</p><p data-lang="zh">为什么猜下一个词能学到更多？从压缩走向泛化与线性探针的图文笔记。</p>{% endif %}
+      <div class="ilya-links">{% if note %}<a class="ilya-read" href="{{ note.url | relative_url }}"><span data-lang="en">Read the note</span><span data-lang="zh">阅读笔记</span> ↗</a>{% endif %}<a href="{{ item.source }}"><span data-lang="en">Event source</span><span data-lang="zh">活动来源</span> ↗</a></div></div>
+    </article>{% endfor %}
+  </section>
+  <section class="ilya-section" id="papers">
+    <div class="ilya-section-head"><span class="ilya-number">02</span><div><h2><span data-lang="en">The reading list</span><span data-lang="zh">伊利亚推荐的论文与阅读</span></h2><p data-lang="en">A reading route through networks, information and learning.</p><p data-lang="zh">从神经网络、信息论到学习，逐篇整理，逐步理解。</p></div></div>
+    <aside class="ilya-source-note"><strong><span data-lang="en">“30 papers” — 27 archived items.</span><span data-lang="zh">“30 篇论文”，存档实际为 27 项。</span></strong><p data-lang="en">The circulating “Ilya 30u30” archive includes papers, essays, a book excerpt and a course. Its curator explicitly says attribution to Ilya's original list is unconfirmed. We track these 27 items without adding three invented recommendations. A citation inside another article does not count as a completed reading note.</p><p data-lang="zh">流传的“Ilya 30u30”存档包含论文、博客、书籍节选与课程，存档作者明确注明尚未确认它是否为伊利亚的原始清单。我们按可追溯的 27 项统计，不补凑三篇；在其他文章中引用过某篇资料，也不算完成了该篇阅读笔记。</p><a href="https://punkx.org/jackdoe/30.html"><span data-lang="en">Inspect the archived list</span><span data-lang="zh">查看清单存档</span> ↗</a></aside>
+    <ol class="ilya-papers">{% for item in site.data.ilya.papers %}{% assign note = site.posts | where: 'ilya_id', item.id | first %}<li><span class="ilya-paper-index">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div><span class="ilya-paper-kind">{{ item.kind }}</span><h3><a href="{{ item.source }}">{{ item.title }} ↗</a></h3>{% if note %}<a class="ilya-read" href="{{ note.url | relative_url }}"><span data-lang="en">Read the note</span><span data-lang="zh">阅读笔记</span> ↗</a>{% else %}<span class="ilya-pending"><span data-lang="en">Notes forthcoming</span><span data-lang="zh">笔记待更新</span></span>{% endif %}</div></li>{% endfor %}</ol>
+  </section>
+  <footer class="ilya-colophon"><span data-lang="en">Read slowly. Follow the sources. Return with better questions.</span><span data-lang="zh">慢慢读，回到原始资料，带着更好的问题再来。</span><small>YF LAB · INDEPENDENT STUDY NOTES</small></footer>
+</main>

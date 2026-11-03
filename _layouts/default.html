@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{% if page.bilingual %}en{% else %}zh-CN{% endif %}">
   <head>
     {% include head.html %}
   </head>
-  <body>
+  <body class="{{ page.body_class }}">
     {% include nav.html %}
     {{ content }}
     {% include footer.html %}

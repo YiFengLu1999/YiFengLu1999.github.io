@@ -15,9 +15,9 @@ layout: default
                         {% endfor %}
                     </div>
                     {% endif %}
-                    <h1>{{ page.title }}</h1>
+                    <h1>{% if page.bilingual %}<span data-lang="en">{{ page.title_en }}</span><span data-lang="zh">{{ page.title }}</span>{% else %}{{ page.title }}{% endif %}</h1>
                     {% if page.subtitle %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    <h2 class="subheading">{% if page.bilingual %}<span data-lang="en">{{ page.subtitle_en }}</span><span data-lang="zh">{{ page.subtitle }}</span>{% else %}{{ page.subtitle }}{% endif %}</h2>
                     {% endif %}
                     <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
                 </div>
@@ -34,7 +34,12 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1 ">
 
-                {{ content }}
+                {% if page.bilingual %}
+                {% include language-switch.html %}
+                {% if page.ilya_id %}<p><a href="{{ '/ilya/' | relative_url }}"><span data-lang="en">← Learning from Ilya</span><span data-lang="zh">← 学习伊利亚专题</span></a></p>{% endif %}
+                <div data-lang="en" lang="en">{% capture english %}{% include {{ page.translation_en }} %}{% endcapture %}{{ english | markdownify }}</div>
+                <div data-lang="zh" lang="zh-CN">{{ content }}</div>
+                {% else %}{{ content }}{% endif %}
 
                 <hr style="visibility: hidden;">
 

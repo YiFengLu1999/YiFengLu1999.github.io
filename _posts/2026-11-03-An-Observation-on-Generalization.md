@@ -1,5 +1,11 @@
 ---
 layout: post
+bilingual: true
+translation_en: translations/generalization-en.md
+title_en: "Why Can Predicting the Next Word Teach Us More?"
+subtitle_en: "Reading Ilya Sutskever on generalization, compression and linear probes"
+ilya_id: generalization
+ilya_type: lecture
 title: 为什么“猜下一个词”能学到更多？从压缩理解泛化
 subtitle: 读 Ilya Sutskever 的 An Observation on Generalization：预测、最短说明书与线性探针
 date: 2026-11-03

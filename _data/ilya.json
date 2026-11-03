@@ -1,0 +1,204 @@
+{
+  "checked": "2026-11-03",
+  "papers": [
+    {
+      "id": "paper-01",
+      "title": "The Annotated Transformer",
+      "source": "https://nlp.seas.harvard.edu/annotated-transformer/",
+      "kind": "Essay / tutorial"
+    },
+    {
+      "id": "paper-02",
+      "title": "The First Law of Complexodynamics",
+      "source": "https://scottaaronson.blog/?p=762",
+      "kind": "Essay / tutorial"
+    },
+    {
+      "id": "paper-03",
+      "title": "The Unreasonable Effectiveness of RNNs",
+      "source": "https://karpathy.github.io/2015/05/21/rnn-effectiveness/",
+      "kind": "Essay / tutorial"
+    },
+    {
+      "id": "paper-04",
+      "title": "Understanding LSTM Networks",
+      "source": "https://colah.github.io/posts/2015-08-Understanding-LSTMs/",
+      "kind": "Essay / tutorial"
+    },
+    {
+      "id": "paper-05",
+      "title": "Recurrent Neural Network Regularization",
+      "source": "https://arxiv.org/pdf/1409.2329.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-06",
+      "title": "Keeping Neural Networks Simple by Minimizing the Description Length of the Weights",
+      "source": "https://www.cs.toronto.edu/~hinton/absps/colt93.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-07",
+      "title": "Pointer Networks",
+      "source": "https://arxiv.org/pdf/1506.03134.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-08",
+      "title": "ImageNet Classification with Deep CNNs",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-09",
+      "title": "Order Matters: Sequence to sequence for sets",
+      "source": "https://arxiv.org/pdf/1511.06391.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-10",
+      "title": "GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism",
+      "source": "https://arxiv.org/pdf/1811.06965.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-11",
+      "title": "Deep Residual Learning for Image Recognition",
+      "source": "https://arxiv.org/pdf/1512.03385.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-12",
+      "title": "Multi-Scale Context Aggregation by Dilated Convolutions",
+      "source": "https://arxiv.org/pdf/1511.07122.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-13",
+      "title": "Neural Quantum Chemistry",
+      "source": "https://arxiv.org/pdf/1704.01212.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-14",
+      "title": "Attention Is All You Need",
+      "source": "https://arxiv.org/pdf/1706.03762.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-15",
+      "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+      "source": "https://arxiv.org/pdf/1409.0473.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-16",
+      "title": "Identity Mappings in Deep Residual Networks",
+      "source": "https://arxiv.org/pdf/1603.05027.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-17",
+      "title": "A Simple NN Module for Relational Reasoning",
+      "source": "https://arxiv.org/pdf/1706.01427.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-18",
+      "title": "Variational Lossy Autoencoder",
+      "source": "https://arxiv.org/pdf/1611.02731.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-19",
+      "title": "Relational RNNs",
+      "source": "https://arxiv.org/pdf/1806.01822.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-20",
+      "title": "Quantifying the Rise and Fall of Complexity in Closed Systems: The Coffee Automaton",
+      "source": "https://arxiv.org/pdf/1405.6903.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-21",
+      "title": "Neural Turing Machines",
+      "source": "https://arxiv.org/pdf/1410.5401.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-22",
+      "title": "Deep Speech 2: End-to-End Speech Recognition in English and Mandarin",
+      "source": "https://arxiv.org/pdf/1512.02595.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-23",
+      "title": "Scaling Laws for Neural LMs",
+      "source": "https://arxiv.org/pdf/2001.08361.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-24",
+      "title": "A Tutorial Introduction to the Minimum Description Length Principle",
+      "source": "https://arxiv.org/pdf/math/0406077.pdf",
+      "kind": "Paper"
+    },
+    {
+      "id": "paper-25",
+      "title": "Machine Super Intelligence Dissertation",
+      "source": "https://www.vetta.org/documents/Machine_Super_Intelligence.pdf",
+      "kind": "Dissertation"
+    },
+    {
+      "id": "paper-26",
+      "title": "PAGE 434 onwards: Komogrov Complexity",
+      "source": "https://www.lirmm.fr/~ashen/kolmbook-eng-scan.pdf",
+      "kind": "Book excerpt · p. 434 onward"
+    },
+    {
+      "id": "paper-27",
+      "title": "CS231n Convolutional Neural Networks for Visual Recognition",
+      "source": "https://cs231n.github.io/",
+      "kind": "Course"
+    }
+  ],
+  "lectures": [
+    {
+      "id": "generalization",
+      "title": "An Observation on Generalization",
+      "date": "2023-08-14",
+      "venue": "Simons Institute",
+      "source": "https://simons.berkeley.edu/talks/ilya-sutskever-openai-2023-08-14"
+    },
+    {
+      "id": "seq2seq-decade",
+      "title": "Sequence to Sequence Learning with Neural Networks · Test of Time talk",
+      "date": "2024-12-13",
+      "venue": "NeurIPS 2024",
+      "source": "https://blog.neurips.cc/2024/11/27/"
+    },
+    {
+      "id": "unsupervised-2019",
+      "title": "Deep Unsupervised Learning · Guest Lecture 8c",
+      "date": "2019-04-03",
+      "venue": "UC Berkeley · CS294-158",
+      "source": "https://sites.google.com/view/berkeley-cs294-158-sp19/home"
+    },
+    {
+      "id": "fast-rl",
+      "title": "Fast RL",
+      "date": "2018-05-25",
+      "venue": "Stanford AI Lab",
+      "source": "https://ai.stanford.edu/events/ai-distinguished-speakers-series/"
+    },
+    {
+      "id": "meta-self-play",
+      "title": "Meta Learning and Self Play",
+      "date": "2018-01-24",
+      "venue": "UC Berkeley · EECS Colloquium",
+      "source": "https://eecs.berkeley.edu/research/colloquium/archives/spring2018/"
+    }
+  ]
+}

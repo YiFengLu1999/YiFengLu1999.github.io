@@ -1,0 +1,5 @@
+html:not([data-reading-lang="zh"]) [data-lang="zh"],html[data-reading-lang="zh"] [data-lang="en"]{display:none!important}
+.language-switch{display:flex;gap:4px;margin:24px 0;padding:5px;background:#132936;border:1px solid #48717e;border-radius:30px;width:max-content}
+.language-switch button{font:600 14px/1.4 Georgia,serif;background:transparent;color:#e9eeee;border:0;border-radius:25px;padding:10px 22px;cursor:pointer}
+.language-switch button[aria-pressed="true"]{background:#c5e8df;color:#102b33}
+.language-switch button:focus-visible{outline:3px solid #dfaf71;outline-offset:3px}
