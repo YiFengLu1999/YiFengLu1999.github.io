@@ -124,15 +124,23 @@ Pretraining used no category labels; training the classifier still uses them. A 
 
 Compression connects several questions: regularities can improve prediction, probability predictions translate into coding costs, and shared structure may reduce the additional information needed for later tasks. But three gaps remain.
 
+<div id="question-finite-compute-en" class="question-anchor"></div>
+
 First, ideal shortest programs and practical neural networks differ. Capacity, data, compute and optimization all limit results. Stochastic gradient descent does not guarantee a shortest description.
 
+<div id="question-linear-readout-en" class="question-anchor"></div>
+
 Second, possessing information and making it accessible differ. Compression alone does not automatically explain why semantic information can be read out by a simple linear classifier.
+
+<div id="question-prediction-objectives-en" class="question-anchor"></div>
 
 Third, prediction objectives and practical needs differ. Lower average prediction loss does not guarantee improvement on every reasoning task or distribution shift. Predicting from preceding context and filling a gap using both sides impose different constraints; neither can be declared universally superior without specifying the task.
 
 For me, the useful shift is to replace the broad question “Does it understand?” with more concrete ones. Which regularities does it exploit? Do they help describe new data? Is task-relevant information easy to extract? Which experiments actually test those claims?
 
 These are more productive research questions than simply declaring that prediction is intelligence.
+
+[Follow these questions in the Ilya open-question notebook](/ilya/questions/).
 
 The three conceptual illustrations were AI-generated to support explanation. They are not figures from the original talk or papers.
 

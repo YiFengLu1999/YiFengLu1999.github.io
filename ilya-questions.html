@@ -1,0 +1,61 @@
+---
+layout: default
+title: Ilya Questions
+title_en: Ilya’s Open Questions — YF Lab
+permalink: /ilya/questions/
+bilingual: true
+body_class: ilya-page
+---
+<link rel="stylesheet" href="{{ '/css/ilya.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/ilya-questions.css' | relative_url }}">
+{% assign notebook = site.data.ilya_questions %}
+{% assign source_note = site.posts | where: 'ilya_id', notebook.source_note | first %}
+<main class="ilya-archive question-notebook">
+  <header class="question-header">
+    <p class="ilya-eyebrow">YF LAB / ILYA / THE QUESTION NOTEBOOK</p>
+    {% include language-switch.html %}
+    <h1><span data-lang="en">The questions <br><em>we keep returning to.</em></span><span data-lang="zh">值得反复追问的，<br><em>尚未解完的问题。</em></span></h1>
+    <p class="question-intro" data-lang="en">Open questions from Ilya’s public ideas, traced back to our reading notes. A place to record what remains unexplained—and what new research changes.</p>
+    <p class="question-intro" data-lang="zh">从伊利亚的公开表达出发，回到我们的学习笔记。记录还没有解释清楚的问题，也记录新研究带来的变化。</p>
+    <div class="question-meta"><span><b>{{ notebook.items.size }}</b> <span data-lang="en">questions tracked</span><span data-lang="zh">个问题持续追踪</span></span><span><b>01</b> <span data-lang="en">source note</span><span data-lang="zh">篇来源笔记</span></span><span><span data-lang="en">Reviewed</span><span data-lang="zh">最近核对</span> {{ notebook.checked }}</span></div>
+    <a class="question-back" href="{{ '/ilya/' | relative_url }}"><span data-lang="en">← Learning from Ilya</span><span data-lang="zh">← 返回学习伊利亚专题</span></a>
+  </header>
+  <div class="question-layout">
+    <nav class="question-index" aria-label="Question index">
+      <p class="ilya-eyebrow"><span data-lang="en">IN THIS NOTEBOOK</span><span data-lang="zh">问题目录</span></p>
+      {% for q in notebook.items %}<a href="#{{ q.id }}"><span class="question-index-number">0{{ forloop.index }}</span><span data-lang="en">{{ q.en.title }}</span><span data-lang="zh">{{ q.zh.title }}</span></a>{% endfor %}
+      <a href="#scope"><span data-lang="en">Sources & scope</span><span data-lang="zh">来源与收录范围</span> ↘</a>
+    </nav>
+    <div>
+      {% for q in notebook.items %}
+      <article class="question-entry" id="{{ q.id }}">
+        <p class="ilya-eyebrow">{{ q.topic }}</p>
+        {% assign languages = 'en,zh' | split: ',' %}{% for lang in languages %}{% assign text = q[lang] %}
+        <div data-lang="{{ lang }}" lang="{% if lang == 'zh' %}zh-CN{% else %}en{% endif %}">
+          <span class="question-origin">{{ text.origin }}</span>
+          <h2>{{ text.title }}</h2>
+          <p class="question-core">{{ text.question }}</p>
+          <h3>{% if lang == 'en' %}Why it matters{% else %}为什么值得追问{% endif %}</h3><p>{{ text.importance }}</p>
+          <div class="question-note"><h3>{% if lang == 'en' %}Where it appears in our blog{% else %}它来自博客的哪里{% endif %}</h3><p>{{ text.context }}</p>
+            <a class="question-source-link" href="{{ source_note.url | relative_url }}?lang={{ lang }}#question-{{ q.anchor }}-{{ lang }}">{% if lang == 'en' %}Read the exact passage{% else %}阅读对应原段落{% endif %} ↗</a>
+            <small>{{ text.location }}<br>An Observation on Generalization · 2023-08-14</small>
+          </div>
+          <h3>{% if lang == 'en' %}What remains open{% else %}具体还有什么没有解清{% endif %}</h3><p>{{ text.remaining }}</p>
+          <div class="question-update"><span class="question-status">{{ text.status }}</span><p>{{ text.update }}</p>
+            <ul>{% for ref in q.refs %}<li><a href="{{ ref.url }}">{{ ref.title }} ↗</a></li>{% endfor %}</ul>
+          </div>
+        </div>{% endfor %}
+        <a class="question-permalink" href="#{{ q.id }}"><span data-lang="en">Link to this question</span><span data-lang="zh">本问题定位链接</span> #0{{ forloop.index }}</a>
+      </article>{% endfor %}
+      <section id="scope" class="question-scope">
+        <h2><span data-lang="en">Sources & scope</span><span data-lang="zh">来源与收录范围</span></h2>
+        <p data-lang="en">The first two entries paraphrase questions or conjectures attributed to the talk in the public accounts below. The third is our formulation of a limitation discussed there. None is presented as a verbatim quotation; video timestamps have not been verified. Every entry links to the corresponding passage in our published note.</p>
+        <p data-lang="zh">前两项是根据公开整理，对演讲问题或猜想的转述；第三项是从演讲讨论的局限延伸出的本站问法。这里不冒充逐字引语，也未标注未经核实的视频时间戳。每个问题都链接到本站已发布笔记的对应段落。</p>
+        <ul><li><a href="https://simons.berkeley.edu/talks/ilya-sutskever-openai-2023-08-14">Simons Institute · An Observation on Generalization</a> · <a href="https://www.youtube.com/watch?v=AKMuA_TVz3A"><span data-lang="en">Original recording</span><span data-lang="zh">原始录像</span></a></li><li><a href="https://biechi.github.io/blog/i1s2g3/">Hao Bai · <span data-lang="en">Secondary account: linear representations and Q&A</span><span data-lang="zh">二手整理：线性表示与问答部分</span></a></li><li><a href="https://sumanthrh.com/post/notes-on-generalization/">Sumanth R Hegde · <span data-lang="en">Secondary account: limitations / unanswered questions</span><span data-lang="zh">二手整理：局限与未解问题部分</span></a></li></ul>
+        <p data-lang="en">“Open” refers to the specific remaining question stated in each entry, not an assertion that the entire field has made no progress. Research updates are concise readings of the linked paper abstracts, checked on {{ notebook.checked }}, not an exhaustive literature review. They are our updates, not claims that Ilya recommended those papers. New evidence may narrow, reformulate or resolve an entry.</p>
+        <p data-lang="zh">“开放”指每项中具体写出的待解问题，不表示整个领域毫无进展。研究更新基于链接论文摘要的简要核对（{{ notebook.checked }}），不是穷尽文献的综述；这些补充也不代表伊利亚推荐过对应论文。后续证据可以缩小、改写或解决这些问题。</p>
+      </section>
+    </div>
+  </div>
+  <footer class="ilya-colophon"><span data-lang="en">A good question deserves a traceable source.</span><span data-lang="zh">好的问题，值得留下可追溯的出处。</span><small>YF LAB · A LIVING QUESTION NOTEBOOK</small></footer>
+</main>

@@ -26,6 +26,7 @@ body_class: ilya-page
     <div><strong>{{ papers_done }}<small> / {{ site.data.ilya.papers.size }}</small></strong><span data-lang="en">Reading notes published</span><span data-lang="zh">已完成 / 阅读清单条目</span><progress value="{{ papers_done }}" max="{{ site.data.ilya.papers.size }}" aria-label="Reading note progress"></progress></div>
     <div class="ilya-edition"><span data-lang="en">An ongoing study, not a finished collection.</span><span data-lang="zh">持续学习，持续更新。</span><small><span data-lang="en">Sources checked</span><span data-lang="zh">资料核对</span> · {{ site.data.ilya.checked }}</small></div>
   </div>
+  <a class="ilya-question-entry-link" href="{{ '/ilya/questions/' | relative_url }}"><span data-lang="en">The open-question notebook →</span><span data-lang="zh">伊利亚的开放问题 →</span><small><span data-lang="en">{{ site.data.ilya_questions.items.size }} questions, linked to the exact passages in our notes.</span><span data-lang="zh">{{ site.data.ilya_questions.items.size }} 个持续追踪的问题，每项链接到笔记对应段落。</span></small></a>
   <section class="ilya-section" id="lectures">
     <div class="ilya-section-head"><span class="ilya-number">01</span><div><h2><span data-lang="en">The lectures</span><span data-lang="zh">伊利亚的讲座</span></h2><p data-lang="en">Five documented events to begin with. This is our growing selection, not a count of every talk Ilya has given.</p><p data-lang="zh">先从 5 场有主办方记录的活动开始。这是本站持续扩展的目录，不是伊利亚全部讲座的总数。</p></div></div>
     {% for item in site.data.ilya.lectures %}

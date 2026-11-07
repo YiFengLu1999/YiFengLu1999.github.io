@@ -1,0 +1,109 @@
+{
+  "checked": "2026-11-07",
+  "source_note": "generalization",
+  "items": [
+    {
+      "id": "linear-readout",
+      "topic": "01 / REPRESENTATION",
+      "anchor": "linear-readout",
+      "en": {
+        "title": "Why is learned knowledge so easy to read with a linear probe?",
+        "origin": "A limitation raised in the talk",
+        "question": "Prediction can reward useful information. Why should that information also become accessible through such a simple readout?",
+        "importance": "This separates possessing information from making it easy to use, and connects representation learning with interpretability.",
+        "context": "Our note distinguishes information stored in a representation from information a simple classifier can extract. The talk’s linear-representation question is also recorded in the two secondary accounts linked below.",
+        "status": "Partial explanations · still being investigated",
+        "update": "Park, Choe and Veitch formalize linear representations and connect them to probing and steering. A 2026 study by Kutluozen and colleagues shows that high probe accuracy alone need not establish a genuinely linear world model. These results refine the question rather than supply a universal account of how linear features form.",
+        "remaining": "Under which data, architecture and optimization conditions do useful features become linearly accessible, and when does probe success reflect the dominant geometry?",
+        "location": "Section 8 · information versus accessibility"
+      },
+      "zh": {
+        "title": "为什么学到的知识，能被简单的线性探针读出来？",
+        "origin": "演讲提出的理论局限",
+        "question": "预测任务可以促使模型保存有用信息，但为什么这些信息还会变得如此容易被读取？",
+        "importance": "它区分了“有知识”与“知识容易使用”，连接表示学习与可解释性。",
+        "context": "本站笔记区分了表示包含信息与简单分类器能够提取信息。演讲中的线性表示问题，也见下方两份二手整理。",
+        "status": "已有局部解释 · 持续研究",
+        "update": "Park、Choe 与 Veitch 形式化了线性表示，并建立其与探针和模型操控的联系。Kutluozen 等人在 2026 年的研究指出，高探针准确率本身不等于真正的线性世界模型。这些工作细化了问题，尚不能视为线性特征形成机制的普遍解释。",
+        "remaining": "哪些数据、架构与优化条件会形成可线性读取的特征？探针成功在什么条件下反映表示的主要几何结构？",
+        "location": "第八节 · 信息与可读取性的距离"
+      },
+      "refs": [
+        {
+          "title": "Park et al. · The Linear Representation Hypothesis (ICML 2024)",
+          "url": "https://arxiv.org/abs/2311.03658"
+        },
+        {
+          "title": "Kutluozen et al. · Is a Linear Probe Evidence of a Linear Representation? (2026)",
+          "url": "https://arxiv.org/abs/2610.22655"
+        }
+      ]
+    },
+    {
+      "id": "prediction-objectives",
+      "topic": "02 / LEARNING OBJECTIVES",
+      "anchor": "prediction-objectives",
+      "en": {
+        "title": "How does the prediction task shape the representation?",
+        "origin": "A conjecture discussed in the talk",
+        "question": "When does predicting from the past demand more global structure than filling gaps using surrounding context?",
+        "importance": "The answer could help explain which training objectives produce features useful beyond the original task.",
+        "context": "Our note contrasts next-token prediction with filling gaps using both sides. The public accounts describe Ilya’s conjecture about difficult prediction cases; the question here concerns its scope, not a universal ranking of autoregressive and masked models.",
+        "status": "Scope-dependent · no universal ranking assumed",
+        "update": "He and colleagues’ MAE paper already demonstrated useful visual learning by masking a high proportion of image patches. It predates the talk and is relevant background, not a subsequent refutation. It shows why masking ratio and task design matter; it does not settle every comparison with autoregressive learning.",
+        "remaining": "Holding data, model capacity and compute comparable, which prediction constraints encourage global features, and how should their transfer value be measured?",
+        "location": "Section 8 · prediction objectives and practical needs"
+      },
+      "zh": {
+        "title": "为什么不同的预测任务，会学出不同的表示？",
+        "origin": "演讲讨论的猜想",
+        "question": "只看前文预测，什么时候比利用前后文填空更需要理解整体结构？",
+        "importance": "这个问题有助于解释：什么样的训练目标，能让学到的特征更好地迁移到其他任务。",
+        "context": "本站笔记对比了自回归预测与双向填空。公开整理记录了伊利亚对困难预测情形的猜想；这里追踪的是适用条件，不是宣布自回归模型永远优于掩码模型。",
+        "status": "依赖具体条件 · 不预设普遍优劣",
+        "update": "He 等人的 MAE 工作已展示：遮蔽大量图像块也能形成有用的视觉学习任务。它早于这场讲座，是相关背景而非后来的反驳。这说明遮蔽比例与任务设计需要纳入比较，但并未解决所有与自回归学习的对照问题。",
+        "remaining": "在数据、容量和计算预算可比时，哪些预测约束更能促成全局特征？如何衡量这些特征的迁移价值？",
+        "location": "第八节 · 预测目标与实际需求的距离"
+      },
+      "refs": [
+        {
+          "title": "He et al. · Masked Autoencoders Are Scalable Vision Learners (2021)",
+          "url": "https://arxiv.org/abs/2111.06377"
+        }
+      ]
+    },
+    {
+      "id": "finite-compute",
+      "topic": "03 / COMPUTATION",
+      "anchor": "finite-compute",
+      "en": {
+        "title": "How far can practical training get toward ideal compression?",
+        "origin": "Our question, reformulated from a stated limitation",
+        "question": "What survives of the shortest-program perspective when models and optimization have finite resources?",
+        "importance": "An ideal benchmark becomes more useful if it can predict the behavior of actual learning systems.",
+        "context": "Our note identifies the gap between shortest programs and neural-network training. This question is our formulation of that gap, not a verbatim question from Ilya. The talk’s Q&A limitation is recorded in Hao Bai’s account.",
+        "status": "Partial theoretical progress · optimization remains a gap",
+        "update": "Shaw and colleagues (ICLR 2026) establish asymptotically optimal description-length objectives for Transformers. Their abstract also reports that standard optimizers fail to find the low-complexity solutions from random initialization in their algorithmic experiment. An asymptotic objective guarantee is therefore different from a guarantee for practical training.",
+        "remaining": "Can we characterize the compression and transfer achievable with finite compute, and explain the roles of initialization and data order?",
+        "location": "Section 8 · ideal programs versus actual networks"
+      },
+      "zh": {
+        "title": "有限算力下的实际训练，离理想压缩还有多远？",
+        "origin": "从演讲局限延伸的本站问题",
+        "question": "模型容量和优化预算有限时，“最短程序”视角中哪些结论还能帮助解释实际学习？",
+        "importance": "如果能预测真实训练系统的行为，理想标尺才更容易转化为可操作的研究方法。",
+        "context": "本站笔记指出最短程序与神经网络训练之间的距离。这里的问法是本站重述，不是伊利亚原话；Hao Bai 的整理记录了演讲问答中对这一类比局限的讨论。",
+        "status": "已有理论进展 · 优化仍有距离",
+        "update": "Shaw 等人（ICLR 2026）建立了 Transformer 渐近最优描述长度目标。他们也在摘要中报告：其算法任务实验里，标准优化器从随机初始化出发未能找到相应的低复杂度解。因此，目标的渐近保证与实际训练过程的保证仍是两回事。",
+        "remaining": "能否刻画有限算力下可实现的压缩与迁移效果，并解释初始化和数据顺序的作用？",
+        "location": "第八节 · 理想程序与实际网络的距离"
+      },
+      "refs": [
+        {
+          "title": "Shaw et al. · Bridging Kolmogorov Complexity and Deep Learning (ICLR 2026)",
+          "url": "https://arxiv.org/abs/2509.22445"
+        }
+      ]
+    }
+  ]
+}
